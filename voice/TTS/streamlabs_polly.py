@@ -33,17 +33,18 @@ class StreamlabsPolly:
         self.url = "https://streamlabs.com/polly/speak"
         self.max_chars = 550
         self.voices = voices
+        self.voice = voice
 
     def run(self, text, filepath, random_voice: bool = False):
         if random_voice:
             voice = self.randomvoice()
         else:
-            if not voice:
+            if not self.voice:
                 raise ValueError(
                     f"Please set the config variable STREAMLABS_POLLY_VOICE to a valid voice. options are: {voices}"
                 )
             voice = str(
-                voice
+                self.voice
             ).capitalize()
         body = {"voice": voice, "text": text, "service": "polly"}
         response = requests.post(self.url, data=body)
