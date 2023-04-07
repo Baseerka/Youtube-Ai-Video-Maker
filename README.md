@@ -8,6 +8,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 
 - [Project Title](#project-title)
 - [How it works](#explanation)
+- [Tutorials](#explanation)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -27,6 +28,20 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 11. Removes the used facts and generates a new video with the remaining facts.
 12. Repeats the process until it runs out of facts.
 13. You can run the program again to create new facts.
+
+## Tutorials<a id="tutorials"></a>
+
+1. How to make this code work:
+
+<b>Coming soon</b>
+
+2. How to take api file from youtube:
+
+<b>Coming soon</b>
+
+3. How to setup manual upload :
+
+<b>Coming soon</b>
 
 ## Installation
 
