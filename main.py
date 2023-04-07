@@ -49,7 +49,7 @@ def main():
             upload_video(video_data)
         except:
             upload_errorr(video_data)
-        del facts["facts"][:number_of_facts]
+        del factse[:number_of_facts]
         remove()
 
 if __name__ == '__main__':
