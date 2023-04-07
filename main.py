@@ -9,8 +9,9 @@ from youtube.upload_video import upload_video
 from youtube.upload_error import upload_errorr
 from extras.cleanup import remove
 
-import random
-import math, json, time
+from important.important import auto_upload, manual_upload, browser_data_dir, browser_exe_path
+
+import math, json, time, os, random
 
 def main():
     facts = get_facts()
@@ -29,26 +30,50 @@ def main():
             add_image["image_path"] = image_paths[idx]
         make_final_video(factes)
         add_to_list(factes)
-        youtube_details_path = "youtube/youtube.json"
-        with open(youtube_details_path, "r") as details:
-            details = json.load(details)
-        random_title = random.choice(details['title'])
-        random_descriptions = random.choice(details['descriptions'])
-        random_tags = random.sample(details['tags'], 10)
-        random_tags = ",".join(random_tags)
-        video_data = {
-        "file": "youtube/videos/final_video.mp4",
-        "title":  f"{random_title}",
-        "description": f"{random_descriptions}",
-        "keywords": f"{random_tags}",
-        "privacyStatus":"public"
-        }
-        print("Posting Video in 10 sec...")
-        time.sleep(10)
-        try:
-            upload_video(video_data)
-        except:
-            upload_errorr(video_data)
+        if not auto_upload:
+            auto_upload_ask = ""
+            while auto_upload_ask != "yes" and auto_upload_ask != "no" and auto_upload_ask != "y" and auto_upload_ask != "n":
+                auto_upload_ask = input("Want to use automatic upload using Youtube api? yes(y)/no(n)")
+                if auto_upload_ask == "yes" or auto_upload_ask == "y":
+                    auto_upload = True
+                elif auto_upload_ask == "no" or auto_upload_ask == "n":
+                    auto_upload = False
+                else: 
+                    print("Unknown command")
+        if auto_upload:
+            youtube_details_path = "youtube/youtube.json"
+            with open(youtube_details_path, "r") as details:
+                details = json.load(details)
+            random_title = random.choice(details['title'])
+            random_descriptions = random.choice(details['descriptions'])
+            random_tags = random.sample(details['tags'], 10)
+            random_tags = ",".join(random_tags)
+            video_data = {
+            "file": "youtube/videos/final_video.mp4",
+            "title":  f"{random_title}",
+            "description": f"{random_descriptions}",
+            "keywords": f"{random_tags}",
+            "privacyStatus":"public"
+            }
+            print("Posting Video in 10 sec...")
+            time.sleep(10)
+            for root, dirs, files in os.walk("./"):
+                if "client_secrets.json" in files:            
+                    try:
+                        upload_video(video_data)
+                    except:
+                        if manual_upload:
+                            if browser_exe_path != "" and browser_data_dir != "":
+                                upload_errorr(video_data)
+                            else:
+                                print("you can find the video at 'youtube/videos'")
+                                option = True
+                else:
+                    print('File to the youtube api is not found')
+                    print("you can find the video at 'youtube/videos'")
+                    option = True
+        if option:
+            input("Type any key after uploading the file or else you will loose the video file")
         del factse[:number_of_facts]
         remove()
 
