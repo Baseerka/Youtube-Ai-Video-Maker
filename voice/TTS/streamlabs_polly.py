@@ -4,6 +4,7 @@ import requests
 from requests.exceptions import JSONDecodeError
 
 from voice.sanitize import check_ratelimit
+from important.important import voice
 
 voices = [
     "Brian",
@@ -32,18 +33,17 @@ class StreamlabsPolly:
         self.url = "https://streamlabs.com/polly/speak"
         self.max_chars = 550
         self.voices = voices
-        self.selected = "Matthew"
 
     def run(self, text, filepath, random_voice: bool = False):
         if random_voice:
             voice = self.randomvoice()
         else:
-            if not self.selected:
+            if not voice:
                 raise ValueError(
                     f"Please set the config variable STREAMLABS_POLLY_VOICE to a valid voice. options are: {voices}"
                 )
             voice = str(
-                self.selected
+                voice
             ).capitalize()
         body = {"voice": voice, "text": text, "service": "polly"}
         response = requests.post(self.url, data=body)
