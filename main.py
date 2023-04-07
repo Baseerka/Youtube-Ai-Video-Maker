@@ -14,10 +14,11 @@ import math, json, time
 
 def main():
     facts = get_facts()
+    #Use in case of any error while running (To save some creds on OpenAI :)
     # with open("ai/data/generated_facts.json")as data:
     #     facts = json.load(data)
+    factse = check_if_exists(facts)
     while facts["facts"] != []:
-        factse = check_if_exists(facts)
         length, number_of_facts, factes = save_text_to_mp3(factse)
         length = math.ceil(length)
         bg_config = get_background_config()
