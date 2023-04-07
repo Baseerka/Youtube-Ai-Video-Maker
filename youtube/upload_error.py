@@ -1,6 +1,7 @@
 import time, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
+from important.important import browser_data_dir, browser_exe_path
 
 
 
@@ -8,8 +9,8 @@ def upload_errorr(video_data):
     options = webdriver.ChromeOptions()
     # options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_argument("--log-level=3")
-    options.add_argument("user-data-dir=C:\\Users\\vinay viswanath\\AppData\\Local\\Google\\Chrome Beta\\User Data\\")
-    options.binary_location = "C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe"
+    options.add_argument(browser_data_dir)
+    options.binary_location = browser_exe_path
     print("Checking for video from videos folder...")
     time.sleep(6)
 
