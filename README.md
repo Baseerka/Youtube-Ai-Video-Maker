@@ -8,7 +8,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 
 - [Project Title](#project-title)
 - [How it works](#explanation)
-- [Tutorials](#explanation)
+- [Tutorials](#tutorials)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
