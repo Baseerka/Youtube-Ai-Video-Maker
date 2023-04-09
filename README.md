@@ -10,6 +10,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 - [How it works](#explanation)
 - [Tutorials](#tutorials)
 - [Installation](#installation)
+- [Requirements](#requirements)
 - [Usage](#usage)
 - [Contributing](#contributing)
 
@@ -52,6 +53,10 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 5. Change the voice if needed in the same direcory `important/important.py` by going to `sample/audio/` directory you can find sample audio file to select which audio you want to select.
 6. To automatically upload the video, add a YouTube API file to the main folder (tutorial to be updated soon).
 7. Alternatively, to manually upload the video, add the path to the browser in `important/important.py`.
+
+## Requirements <a id="requirements"></a>
+
+1. Take api key from [OpenAI API](https://platform.openai.com/account/api-keys)
 
 ## Usage
 
