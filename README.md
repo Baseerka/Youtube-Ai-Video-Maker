@@ -65,5 +65,6 @@ If you would like to contribute to this project, please fork the repository and 
 
 - [elebumm/RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) for the code to get the TTS and background.
 - Inspired by [this video](https://youtu.be/CjHP1W3nxe8a).
+- [Tutorials Point](https://www.tutorialspoint.com/program-to-check-whether-two-sentences-are-similar-or-not-in-python) for the code to check if we used it in the past(I searched for it everywhere but nothing worked like their code🤯🤯).
 
 Use this and modify it into a good one.
