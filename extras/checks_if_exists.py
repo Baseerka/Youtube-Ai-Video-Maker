@@ -9,17 +9,20 @@ with open(path, "r") as f:
     result = json.load(f)
 
 def check_if_exists(facts):
-    new_facts = []
-    for fact in facts["facts"]:
-        for result in result["facts"]:
-            if solve(fact["fact"], result):
-                continue
-        else:
-            all = {}
-            all["fact"] = fact["fact"]
-            all["topic"] = fact["topic"]
-            new_facts.append(all)
-    return new_facts
+   new_facts = []
+   for fact in facts["facts"]:
+      solved = False  # initialize the flag
+      for result in results["facts"]:
+         if solve(fact["fact"], result):
+               print(True)
+               solved = True  # set the flag to True if a solution is found
+               break  # exit the inner loop when a solution is found
+      if not solved:  # append the fact only if no solution is found
+         all = {}
+         all["fact"] = fact["fact"]
+         all["topic"] = fact["topic"]
+         new_facts.append(all)
+   return new_facts
 
 def solve(s, t):
    s1 = s.split()
