@@ -14,7 +14,6 @@ def check_if_exists(facts):
       solved = False  # initialize the flag
       for result in results["facts"]:
          if solve(fact["fact"], result):
-               print(True)
                solved = True  # set the flag to True if a solution is found
                break  # exit the inner loop when a solution is found
       if not solved:  # append the fact only if no solution is found
