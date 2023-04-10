@@ -10,16 +10,15 @@ with open(path, "r") as f:
 
 def check_if_exists(facts):
     new_facts = []
-    if result:
-        for fact in facts["facts"]:
-            for result in result["facts"]:
-                if solve(fact["fact"], result):
-                    continue
-                else:
-                    all = {}
-                    all["fact"] = fact["fact"]
-                    all["topic"] = fact["topic"]
-                    new_facts.append(all)
+    for fact in facts["facts"]:
+        for result in result["facts"]:
+            if solve(fact["fact"], result):
+                continue
+        else:
+            all = {}
+            all["fact"] = fact["fact"]
+            all["topic"] = fact["topic"]
+            new_facts.append(all)
     return new_facts
 
 def solve(s, t):
