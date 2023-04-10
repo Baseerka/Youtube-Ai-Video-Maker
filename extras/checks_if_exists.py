@@ -6,7 +6,7 @@ path = "extras/old.json"
 Path(path).mkdir(parents=True, exist_ok=True)
 
 with open(path, "r") as f:
-    result = json.load(f)
+    results = json.load(f)
 
 def check_if_exists(facts):
    new_facts = []
