@@ -2,14 +2,12 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+from extras.cleanup import cleanup
 
-from pathlib import Path
 
 def multi_img(id, time):
     folder_path = "assets/temp/images/generated_images/"
     output_path = "assets/temp/images/chosen_images/"
-    Path(folder_path).mkdir(parents=True, exist_ok=True)
-    Path(output_path).mkdir(parents=True, exist_ok=True)
     images_list = os.listdir(folder_path)
 
     if len(images_list) > 1:
@@ -66,9 +64,14 @@ def multi_img(id, time):
             # Show the combined image in a new window
             combined_image.show()
 
-            # Let the user choose which image to pick
-            choice = input("Enter the number of the image you want to pick : ")
-            combined_image.close()
+            choice = ""
+            while not choice.isdigit():
+                # Let the user choose which image to pick
+                choice = input("Enter the number of the image you want to pick : ")
+                combined_image.close()
+                
+                if not choice.isdigit():
+                    print("unknown choice")
 
             chosen_image = images[int(choice) - 1][1]
             chosen_image.show()
@@ -99,7 +102,7 @@ def multi_img(id, time):
 
             sure = ""
             while sure.lower() != "yes" and sure.lower() != "no" and sure.lower() != "n" and sure.lower() != "y":
-                sure = input("Is this image ok (if typed no generate new image)? y(yes)/n(no) : ")
+                sure = input("Is this image ok (if typed 'no' generate new image)? y(yes)/n(no) : ")
 
                 if sure.lower() == "yes" or sure.lower() == "y":
                     path_to_the_image = os.path.join(output_path, f"chosen_image_{id}.png")
