@@ -32,7 +32,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 
 ## Tutorials<a id="tutorials"></a>
 
-### 1. How to make this code work:###
+### 1. How to make this code work:
 
   1. **Clone the Repository**: 
     Begin by cloning the project repository to your local machine:​
@@ -44,14 +44,14 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
   2. **Set Up a Virtual Environment (Optional)**: 
     It's recommended to use a virtual environment to manage dependencies:​
   
-    - For Windows:​
+  - For Windows:​
   
   ```bash
   python -m venv env
   env\Scripts\activate
   ```
   
-    - For Linux/macOS:​
+  - For Linux/macOS:​
   
   ```bash
   python3 -m venv env
