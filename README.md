@@ -106,7 +106,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 python main.py
 ```
 
-###2. How to take api file from youtube:
+### 2. How to take api file from youtube:
 
    - Visit the [Google Developer Console](https://console.developers.google.com/)
    - Create a project or use an existing one.
