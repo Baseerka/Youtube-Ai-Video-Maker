@@ -106,9 +106,13 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 python main.py
 ```
 
-2. How to take api file from youtube:
+###2. How to take api file from youtube:
 
-<b>Coming soon</b>
+   - Visit the [Google Developer Console](https://console.developers.google.com/)
+   - Create a project or use an existing one.
+   - Enable the **YouTube Data API v3**.
+   - Create OAuth 2.0 credentials (Desktop App) and download the JSON file.
+   - Save it and update the `credentials_file` path in `config.json`.
 
 3. How to setup manual upload :
 
