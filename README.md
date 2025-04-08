@@ -34,7 +34,77 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 
 1. How to make this code work:
 
-<b>Coming soon</b>
+1. **Clone the Repository**: 
+  Begin by cloning the project repository to your local machine:​
+
+```bash
+git clone https://github.com/Baseerka/Youtube-Ai-Video-Maker.git
+```
+
+2. **Set Up a Virtual Environment (Optional)**: 
+  It's recommended to use a virtual environment to manage dependencies:​
+
+  - For Windows:​
+
+```bash
+python -m venv env
+env\Scripts\activate
+```
+
+  - For Linux/macOS:​
+
+```bash
+python3 -m venv env
+source env/bin/activate
+```
+
+3. **Install Required Dependencies**: 
+   Navigate to the project directory and install the necessary packages:​
+
+```bash
+cd Youtube-Ai-Video-Maker
+pip install -r requirements.txt
+```
+
+4. **Configure the OpenAI API Key**: 
+  Obtain your OpenAI API key from the OpenAI API page. Then, open the `important/important.py` file and set your API key:​
+
+```python
+openai_api = "YOUR_API_KEY"
+```
+
+5. **Select a Voice for Text-to-Speech (TTS)**: 
+  The project includes sample audio files in the `sample/audio/ directory`. Choose a voice that suits your preference and update the `voice` variable in `important/important.py` accordingly:​
+
+```python
+voice = "path_to_selected_voice_file"
+```
+
+6. **Set Up YouTube API for Automatic Uploads (Optional)**: 
+  To enable automatic video uploads to YouTube:​
+
+    - Obtain your YouTube Data API credentials by following the [YouTube API documentation](https://developers.google.com/youtube/registering_an_application).​
+    - Download the `client_secrets.json` file from the Google Cloud Console.​
+    - Place the `client_secrets.json` file in the main project directory.​
+
+7. **Configure Manual Upload (Alternative to Automatic Uploads)**:
+   If you prefer to upload videos manually:​
+
+    - Open the `important/important.py` file.​
+    - Set the `manual_upload` variable to True.​
+    - Specify the path to your web browser's executable in the `browser_path` variable. For example:​
+
+```python
+manual_upload = True
+browser_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+```
+
+8. **Run the Main Script**: 
+  With all configurations in place, execute the main script to start the video creation process:​
+
+```bash
+python main.py
+```
 
 2. How to take api file from youtube:
 
