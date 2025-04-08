@@ -32,7 +32,7 @@ With this code, you can create videos like [Link To The Video](https://youtube.c
 
 ## Tutorials<a id="tutorials"></a>
 
-### 1. How to make this code work:
+### 1. How to make this code work:###
 
   1. **Clone the Repository**: 
     Begin by cloning the project repository to your local machine:​
