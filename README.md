@@ -2,7 +2,7 @@
 
 Create Youtube Videos Using OpenAI's API
 
-With this code, you can create videos like [Link To The Video](https://youtube.com/shorts/WWt5XI1te14?feature=share)/You can find it in the sample folder if you want.
+With this code, you can create videos like the one you can find in the sample folder.
 
 ## Table of Contents
 
