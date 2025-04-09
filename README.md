@@ -2,7 +2,7 @@
 
 Create Youtube Videos Using OpenAI's API
 
-With this code, you can create [videos](https://github.com/Baseerka/Youtube-Ai-Video-Maker/blob/master/sample/videos/final_video.mp4) like the one you can find in the sample folder.
+With this code, you can create videos like the one you can find in the [sample folder](https://github.com/Baseerka/Youtube-Ai-Video-Maker/blob/master/sample/videos).
 
 ## Table of Contents
 
